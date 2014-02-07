@@ -1,0 +1,13 @@
+extends layout
+
+block body
+  div
+    label Name:
+    input(type='text', ng-model='yourName', placeholder='Enter a name here')
+    hr
+    h1 Eat shit {{yourName}}!
+
+    div(ng-view)
+
+  script(src='js/vendor.js')
+  script(src='js/app.js')

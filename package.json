@@ -1,0 +1,19 @@
+{
+  "name": "site",
+  "description": "exploratory node app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "bower": "1.2.x",
+    "coffee-script": "1.6.x",
+    "express": "3.x",
+    "jade": "1.1.x",
+    "mongoose": "3.8.x",
+
+    "coffee-script-brunch": "1.7.x",
+    "css-brunch": "1.7.x",
+    "jade-angularjs-brunch" : ">= 0.0.1 < 1.5",
+    "javascript-brunch": "1.7.x",
+    "uglify-js-brunch": "1.7.x"
+  }
+}

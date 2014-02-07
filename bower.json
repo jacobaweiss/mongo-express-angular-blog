@@ -1,0 +1,21 @@
+{
+  "name": "jax",
+  "version": "0.0.0",
+  "authors": [
+    "Jack Weiss <jacobaweiss@gmail.com>"
+  ],
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "jquery": "2.1.0"
+  },
+  "description": "test stuff",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
