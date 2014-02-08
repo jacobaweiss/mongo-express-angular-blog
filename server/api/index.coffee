@@ -5,7 +5,7 @@ paramToTitle = (title) ->
 
 # create
 exports.addPost = (req, res) ->
-  data.Post.create req.body.post, (err, post) ->
+  data.Post.create req.body, (err, post) ->
     if err
       res.send "Error occurred creating post", 404
     else
@@ -27,7 +27,7 @@ exports.post = (req, res) ->
 # update
 exports.editPost = (req, res) ->
   title = paramToTitle req.params.title
-  data.Post.findOneAndUpdate {title: title}, req.body.post, (err) ->
+  data.Post.findOneAndUpdate {title: title}, req.body, (err) ->
     if err
       res.send "Error occurred removing post", 404
     else

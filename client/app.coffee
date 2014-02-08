@@ -6,12 +6,20 @@ angular.module('blogger', [
 .config ($routeProvider) ->
   $routeProvider
 
-    .when '/posts',
+    .when '/',
       templateUrl: '/partials/postIndex.html'
       controller:  'PostsController'
 
+    .when '/posts/new',
+      templateUrl: '/partials/postNew.html'
+      controller:  'AddPostController'
+
+    .when '/post/edit/:title',
+      templateUrl: '/partials/postEdit.html'
+      controller:  'EditPostController'
+
     .when '/post/:title',
       templateUrl: '/partials/postShow.html'
-      controller:  'PostController'
+      controller:  'ShowPostController'
 
     .otherwise redirectTo: '/'
