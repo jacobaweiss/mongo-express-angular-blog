@@ -1,12 +1,17 @@
 angular.module('blogger', [
   'ngRoute',
-  'blogger.controllers'
+  'blogger.controllers',
+  'partials'
 ])
-.config ($routeProvider, $locationProvider) ->
+.config ($routeProvider) ->
   $routeProvider
 
-    .when '/',
-      templateUrl: '/templates/posts/index.html'
+    .when '/posts',
+      templateUrl: '/partials/postIndex.html'
       controller:  'PostsController'
+
+    .when '/post/:title',
+      templateUrl: '/partials/postShow.html'
+      controller:  'PostController'
 
     .otherwise redirectTo: '/'

@@ -22,7 +22,7 @@ exports.post = (req, res) ->
   title = paramToTitle req.params.title
   data.Post.findOne {title: title}, (err, post) ->
     console.log err if err
-    res.send post
+    res.json { post: post }
 
 # update
 exports.editPost = (req, res) ->

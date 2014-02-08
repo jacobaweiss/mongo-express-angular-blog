@@ -10,6 +10,7 @@ assetsPath = path.join(__dirname, '..', '_public')
 
 app.use express.static(assetsPath)
 app.use express.bodyParser()
+app.use app.router
 
 app.post   '/api/post',        api.addPost
 app.get    '/api/posts',       api.posts
