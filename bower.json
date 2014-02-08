@@ -5,9 +5,9 @@
     "Jack Weiss <jacobaweiss@gmail.com>"
   ],
   "dependencies": {
-    "angular": "1.2.x",
-    "angular-route": "1.2.x",
-    "jquery": "2.1.0"
+    "jquery": "2.1.0",
+    "angular": "1.2.11",
+    "angular-route": "1.2.11"
   },
   "description": "test stuff",
   "license": "MIT",
