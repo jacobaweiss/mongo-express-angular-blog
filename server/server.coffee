@@ -12,8 +12,8 @@ app.use express.static(assetsPath)
 app.use express.bodyParser()
 app.use app.router
 
-app.post   '/api/posts',       api.addPost
-app.get    '/api/posts',       api.posts
+app.post   '/api/post',        api.addPost
+app.get    '/api/post',        api.posts
 app.get    '/api/post/:title', api.post
 app.put    '/api/post/:title', api.editPost
 app.delete '/api/post/:title', api.removePost

@@ -14,15 +14,19 @@ exports.addPost = (req, res) ->
 # read index
 exports.posts = (req, res) ->
   data.Post.find (err, posts) ->
-    console.log err if err
-    res.json { posts: posts }
+    if err
+      res.send "Error occurred getting posts", 404
+    else
+      res.send posts
 
 # read
 exports.post = (req, res) ->
   title = paramToTitle req.params.title
   data.Post.findOne {title: title}, (err, post) ->
-    console.log err if err
-    res.json { post: post }
+    if err
+      res.send "Error occurred getting post", 404
+    else
+      res.send post
 
 # update
 exports.editPost = (req, res) ->
