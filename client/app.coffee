@@ -3,7 +3,7 @@ angular.module('blogger', [
   'blogger.controllers', 'blogger.services',
   'partials'
 ])
-.config ($routeProvider) ->
+.config ($routeProvider, $locationProvider) ->
   $routeProvider
 
     .when '/',
@@ -14,12 +14,14 @@ angular.module('blogger', [
       templateUrl: '/partials/postNew.html'
       controller:  'AddPostController'
 
-    .when '/post/edit/:title',
+    .when '/post/edit/:id',
       templateUrl: '/partials/postEdit.html'
       controller:  'EditPostController'
 
-    .when '/post/:title',
+    .when '/post/:id',
       templateUrl: '/partials/postShow.html'
       controller:  'ShowPostController'
 
     .otherwise redirectTo: '/'
+
+  $locationProvider.html5Mode true

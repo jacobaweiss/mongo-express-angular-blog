@@ -14,9 +14,9 @@ app.use app.router
 
 app.post   '/api/post',        api.addPost
 app.get    '/api/post',        api.posts
-app.get    '/api/post/:title', api.post
-app.put    '/api/post/:title', api.editPost
-app.delete '/api/post/:title', api.removePost
+app.get    '/api/post/:id',    api.post
+app.put    '/api/post/:id',    api.editPost
+app.delete '/api/post/:id',    api.removePost
 app.get    '*',                (req, res) -> res.sendfile "#{assetsPath}/index.html"
 
 module.exports.startServer = (port, path, callback) ->

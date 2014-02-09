@@ -1,8 +1,5 @@
 data = require '../models'
 
-paramToTitle = (title) ->
-  (title.split('_').map (word) -> word[0].toUpperCase() + word[1..-1].toLowerCase()).join ' '
-
 # create
 exports.addPost = (req, res) ->
   data.Post.create req.body, (err, post) ->
@@ -21,8 +18,7 @@ exports.posts = (req, res) ->
 
 # read
 exports.post = (req, res) ->
-  title = paramToTitle req.params.title
-  data.Post.findOne {title: title}, (err, post) ->
+  data.Post.findOne {'_id': req.params.id}, (err, post) ->
     if err
       res.send "Error occurred getting post", 404
     else
@@ -30,8 +26,7 @@ exports.post = (req, res) ->
 
 # update
 exports.editPost = (req, res) ->
-  title = paramToTitle req.params.title
-  data.Post.findOneAndUpdate {title: title}, req.body, (err) ->
+  data.Post.findOneAndUpdate {'_id': req.params.id}, req.body, (err) ->
     if err
       res.send "Error occurred removing post", 404
     else
@@ -39,8 +34,7 @@ exports.editPost = (req, res) ->
 
 # destroy
 exports.removePost = (req, res) ->
-  title = paramToTitle req.params.title
-  data.Post.findOneAndRemove {title: title}, (err) ->
+  data.Post.findOneAndRemove {'_id': req.params.id}, (err) ->
     if err
       res.send "Error occurred removing post", 404
     else
