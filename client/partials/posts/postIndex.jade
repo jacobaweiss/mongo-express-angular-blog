@@ -1,5 +1,6 @@
+input(type='text', ng-model='search', placeholder='Search posts')
 ul
-  li(ng-repeat='post in posts')
+  li(ng-repeat='post in posts | filter:search')
     h3{{post.title}}
     p {{post.content}}
     a(href="post/{{post['_id']}}")  show
