@@ -1,4 +1,3 @@
-success = ->
 stripImmutableData = (form) ->
   delete form['_id']
   form
@@ -10,14 +9,20 @@ angular.module('blogger.controllers', [])
   $scope.removePost = (id) -> Post.delete { id: id }, -> $scope.posts = Post.query()
 
 .controller 'ShowPostController', ($scope, $location, $routeParams, Post) ->
-  $scope.post = Post.get { id: $routeParams.id }, success, -> $location.path '/'
+  Post.get { id: $routeParams.id },
+    (data) -> $scope.post = data,
+    (error) -> $location.path '/'
+
   $scope.removePost = -> Post.delete { id: $routeParams.id }, -> $location.path '/'
 
 .controller 'AddPostController', ($scope, $location, Post) ->
   $scope.submitPost = -> (new Post $scope.post).$save -> $location.path '/'
 
 .controller 'EditPostController', ($scope, $location, $routeParams, Post) ->
-  $scope.post = Post.get { id: $routeParams.id }, success, -> $location.path '/'
+  Post.get { id: $routeParams.id },
+    (data) -> $scope.post = data,
+    (error) -> $location.path '/'
+
   $scope.updatePost = ->
     Post.update { id: $routeParams.id }, stripImmutableData($scope.post), ->
       $location.path "/post/#{$routeParams.id}"
