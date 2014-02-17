@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "bower": "1.2.x",
+    "brunch": "1.7.x",
     "coffee-script": "1.6.x",
     "express": "3.x",
     "jade": "~0.33",
