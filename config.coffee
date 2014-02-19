@@ -12,7 +12,7 @@ exports.config =
 
     stylesheets:
       joinTo:
-        'css/app.css': /^(app|vendor|bower_components)/
+        'css/app.css': /^(client|vendor|bower_components)/
 
     templates:
       joinTo:
